@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -11,6 +17,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 a {
@@ -23,10 +30,7 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  width: 100%;
   min-height: 100vh;
 }
 
@@ -65,4 +69,47 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.layout{
+  display: grid;
+  place-items: center;
+  grid-template-areas:
+  "header"
+  "main"
+  "footer";
+  grid-template-rows: 10rem 1fr 10rem; 
+}
+
+
+.layout__header{
+  grid-area: header;
+  border-bottom: 2px solid black;
+  width: 50%;
+  height: 10rem;
+}
+
+.header__h1{
+  line-height: 10rem;
+  text-align: center;
+}
+
+.layout__main{
+  margin-top: 5rem;
+  grid-area: main;
+}
+
+.main__cards{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.layout__footer{
+  grid-area: footer;
+  width: 80%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  
 }
